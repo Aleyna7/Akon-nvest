@@ -18,7 +18,7 @@ namespace EntityLayer.Entities
 
         public int DistrictId { get; set; }
 
-        public virtual  District District { get; set; }
+        public virtual District District { get; set; };
     }
 }
 
