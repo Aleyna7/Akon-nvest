@@ -1,13 +1,13 @@
-using DataAccessLayer.Data;
 using LinqToDB;
 using Microsoft.EntityFrameworkCore;
+using DataAccessLayer.Data; // "YourProjectNamespace" kendi projenizin namespace'iyle deðiþtirin
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<DataContext>(conf => conf.UseSqlServer(builder.GetConnectionString("DefaultConnection")).UseLazyLoadingProxies());
+builder.Services.AddDbContext<DataContext>(conf => conf.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).UseLazyLoadingProxies());
 
 var app = builder.Build();
 
