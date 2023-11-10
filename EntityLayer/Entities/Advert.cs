@@ -71,14 +71,18 @@ namespace EntityLayer.Entities
         [NotMapped]
         public IEnumerable <IFormFile> Image { get; set; } // Resim dosyası
 
-        public virtual  Neighbourhood Neighbourhood{ get; set; }
+        // Diğer özellikler
 
-        public virtual Type Type { get; set; }
+        public string UserAdminId { get; set; }
 
+        // Kullanıcının bilgileri
         public virtual UserAdmin UserAdmin { get; set; }
 
+        // Diğer ilişkilendirilmiş sınıflar
+        public virtual Neighbourhood Neighbourhood { get; set; }
+        public virtual Type Type { get; set; }
         public virtual List<Images> Images { get; set; }
 
-      
+
     }
 }

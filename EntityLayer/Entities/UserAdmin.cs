@@ -1,16 +1,12 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace EntityLayer.Entities
 {
-    public class UserAdmin:IdentityUser
+    public class UserAdmin : IdentityUser
     {
         public string FullName { get; set; }
+
+        // Diğer özellikleri ekleyebilirsiniz
 
         public virtual List<Advert> Adverts { get; set; }
     }

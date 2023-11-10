@@ -9,6 +9,7 @@ namespace EntityLayer.Entities
 {
     public class District
     {
+      
         [Key]
         public int DistrictId { get; set; } //İlçe ID
 
@@ -20,6 +21,8 @@ namespace EntityLayer.Entities
 
         public virtual City City { get; set; }
 
-        public List<Neighbourhood>Neighbourhood{ get; set; }
+        public virtual Neighbourhood Neighbourhood { get; set; }
+        
+      
     }
 }
