@@ -16,7 +16,7 @@ namespace DataAccesLayer.Data
 
         }
 
-        protected override void OnModelCreating(ModelBuilder )
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder); // IdentityDbContext'in OnModelCreating metodunu çağırın
 
