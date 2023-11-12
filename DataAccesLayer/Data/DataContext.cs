@@ -39,6 +39,6 @@ namespace DataAccesLayer.Data
         public DbSet<Situation> Situations { get; set; }
         public DbSet<EntityLayer.Entities.Type> Types { get; set; }
         public DbSet<UserAdmin> UserAdmins { get; set; }
-        public DbSet<IdentityUserLogin> IdentityUserLogins { get; set; }
+        public DbSet<IdentityUserLogin> IdentityUserLogins 
     }
 }
