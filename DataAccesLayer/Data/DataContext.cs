@@ -11,7 +11,7 @@ namespace DataAccesLayer.Data
 {
     public class DataContext : IdentityDbContext<UserAdmin>
     {
-        public DataContext(DbContextOptions options) : base(options)
+        public DataContext(DbContextOptions options) : base()
         {
 
 
