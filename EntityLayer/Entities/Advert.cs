@@ -64,7 +64,7 @@ namespace EntityLayer.Entities
 
         public int TypId { get; set; } //Tipi
 
-        public string UserAdminID { get; set; }
+        //public string UserAdminID { get; set; }
 
         public bool Status { get; set;} //İlan AKtif mi Pasif mi
 
@@ -73,9 +73,11 @@ namespace EntityLayer.Entities
 
         // Diğer özellikler
 
-        public string UserAdminId { get; set; }
+        public string UserAdminId { get; set; } // UserAdmin sınıfının Id özelliği ile eşleşmeli
 
         // Kullanıcının bilgileri
+        [ForeignKey("UserAdminId")]
+
         public virtual UserAdmin UserAdmin { get; set; }
 
         // Diğer ilişkilendirilmiş sınıflar
