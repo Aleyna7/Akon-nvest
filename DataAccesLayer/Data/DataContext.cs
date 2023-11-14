@@ -9,27 +9,13 @@ using System.Threading.Tasks;
 
 namespace DataAccesLayer.Data
 {
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<UserAdmin>
     {
-        public DataContext(DbContextOptions<DataContext> options) : base(options)
+        public DataContext(DbContextOptions options) : base(options)
         {
 
+
         }
-
-        protected override void OnModelCreating(ModelBuilder )
-        {
-            base.OnModelCreating(modelBuilder); // IdentityDbContext'in OnModelCreating metodunu çağırın
-
-            // IdentityUserLogin sınıfının birincil anahtarı olmadığını belirtme
-            modelBuilder.Entity<IdentityUserLogin>().HasNoKey();
-
-            // Diğer konfigürasyonları ekleyebilirsiniz
-            // ...
-
-            // Özel bir konfigürasyon örneği:
-            // modelBuilder.Entity<Advert>().Property(a => a.Price).HasColumnType("decimal(18, 2)");
-        }
-
         public DbSet<Advert> Adverts { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<District> Districts { get; set; }
