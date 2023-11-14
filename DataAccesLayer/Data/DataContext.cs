@@ -1,5 +1,6 @@
 ﻿using EntityLayer.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,6 @@ namespace DataAccesLayer.Data
         public DbSet<Situation> Situations { get; set; }
         public DbSet<EntityLayer.Entities.Type> Types { get; set; }
         public DbSet<UserAdmin> UserAdmins { get; set; }
-        public DbSet<IdentityUserLogin> IdentityUserLogins { get; set; }
+       
     }
 }
