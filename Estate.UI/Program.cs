@@ -1,6 +1,7 @@
 using LinqToDB;
 using Microsoft.EntityFrameworkCore;
-using DataAccesLayer.Data; // "YourProjectNamespace" kendi projenizin namespace'iyle deðiþtirin
+using DataAccesLayer.Data;
+using Estate.UI.Areas.Admin.Identity; // "YourProjectNamespace" kendi projenizin namespace'iyle deðiþtirin
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<DataAccesLayer.Data.DataContext>(conf => conf.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")).UseLazyLoadingProxies());
 
 var app = builder.Build();
+
+app.PrepareDatabase().GetAwaiter().GetResult();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
