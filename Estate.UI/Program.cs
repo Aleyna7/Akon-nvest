@@ -27,7 +27,15 @@ builder.Services.Configure<IdentityOptions>(opt =>
     opt.Password.RequireNonAlphanumeric = false;
     opt.User.AllowedUserNameCharacters = "abcçdefgðhýijklmnroöprsþtuüvyzABCÇDEFGÐHIÝJKLMNROÖPRSÞTUÜVYZ0123456789-._";
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Admin/Admin/Login";
+    options.LogoutPath = "/Admin/Admin/LogOut";
+    options.AccessDeniedPath = "/Admin/Admin/AccessDeniedPath";
+    options.ExpireTimeSpan = TimeSpan.FromMinutes(6);
+});
 
+builder.Services.AddSession();
 var app = builder.Build();
 
 app.PrepareDatabase().GetAwaiter().GetResult();
@@ -46,6 +54,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseSession();
 
 app.UseEndpoints(endpoints =>
 {

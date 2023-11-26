@@ -2,6 +2,17 @@
 @{
     ViewData["Title"] = "Index";
 }
+@using Microsoft.AspNetCore.Http
+<div class="container">
 
-<h1>Index</h1>
+    <div class="row" >
+
+        <div class="col-md-6">
+            <div class="jumbotron">@Context.Session.GetString("FullName") Hoş Geldiniz</div>
+
+        </div>
+
+    </div>
+
+</div>
 
