@@ -55,5 +55,11 @@ namespace Estate.UI.Areas.Admin.Controllers
 
             return View();
         }
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            HttpContext.Session.Remove("FullName");
+            return RedirectToAction("Login");
+        }
     }
 }
